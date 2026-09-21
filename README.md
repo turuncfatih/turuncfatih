@@ -3,19 +3,12 @@
   <img alt="Fatih Turunç — backend-first, full-stack in practice, Antalya" src="banner-light.svg">
 </picture>
 
-<p>
-  <img alt=".NET"          src="https://img.shields.io/badge/.NET-30363d?style=flat-square&logoColor=white&logo=dotnet">
-  <img alt="Node.js"       src="https://img.shields.io/badge/Node.js-30363d?style=flat-square&logoColor=white&logo=nodedotjs">
-  <img alt="TypeScript"    src="https://img.shields.io/badge/TypeScript-30363d?style=flat-square&logoColor=white&logo=typescript">
-  <img alt="React Native"  src="https://img.shields.io/badge/React%20Native-30363d?style=flat-square&logoColor=white&logo=react">
-  <img alt="MongoDB"       src="https://img.shields.io/badge/MongoDB-30363d?style=flat-square&logoColor=white&logo=mongodb">
-  <img alt="Elasticsearch" src="https://img.shields.io/badge/Elasticsearch-30363d?style=flat-square&logoColor=white&logo=elasticsearch">
-  <img alt="Docker"        src="https://img.shields.io/badge/Docker-30363d?style=flat-square&logoColor=white&logo=docker">
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="stack-dark.svg">
+  <img alt="Backend: .NET, Node.js, TypeScript, React Native · Data: SQL Server, PostgreSQL, MongoDB, Firebase, Supabase, Redis, Elasticsearch · Cloud: Azure, AWS, Cloudflare, Docker" src="stack-light.svg">
+</picture>
 
 **Architecture** &nbsp; Domain-driven design · TDD · microservices where the boundaries are real, a monolith where they are not &nbsp;·&nbsp; feature-based structure on mobile
-
-**Platform & data** &nbsp; Azure · AWS · Cloudflare &nbsp;·&nbsp; MSSQL alongside the document stores &nbsp;·&nbsp; caching layers
 
 **Integrations** &nbsp; POS and payment systems, third-party APIs — the work where a retry has to be idempotent and a mismatch is somebody's money
 
