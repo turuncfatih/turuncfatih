@@ -17,15 +17,16 @@
 ### Seçilmiş projeler · Selected work
 
 Hepsinde backend: veri modeli, servis sınırları ve altındaki sistem mimarisi.
-<sub>Backend on all of them: the data model, the service boundaries, and the system architecture underneath.</sub>
+Mobil ve arayüz tarafı başka ekiplerdeydi.
+<sub>Backend on all of them: the data model, the service boundaries and the system architecture underneath. The mobile and front-end work belonged to other teams.</sub>
 
 |  | Türkçe | English |
 |---|---|---|
-| **Poddy** | Podcast platformu — mobil istemcinin arkasında microservices | Podcast platform, microservices behind the mobile client |
-| **Holopack** | Mobil uygulama ve dashboard'u | Mobile app and its dashboard |
-| **Alterna** | 3D model iş akışı platformu | 3D model workflow platform |
+| **Poddy** | Podcast platformu — mobil istemciyi besleyen microservices | Podcast platform — the microservices serving its mobile client |
+| **Holopack** | Mobil uygulama ve dashboard'u besleyen servisler | The services behind a mobile app and its dashboard |
+| **Alterna** | 3D model iş akışı platformu — sunucu tarafı | 3D model workflow platform — the server side |
 | **TÜSKA** | Türkiye Sağlık Hizmetleri Kalite ve Akreditasyon Enstitüsü akreditasyon başvuru sistemi — microservices | Accreditation application system for Türkiye's health quality institute, microservices |
-| **WristIQ** | Bileklik ve QR ile ödeme | Wristband and QR payments |
+| **WristIQ** | Bileklik ve QR ile ödeme — işlem ve ödeme tarafı | Wristband and QR payments — the transaction and payment side |
 | **SupportSignal** | Zendesk, Jira ve Freshdesk geçmişini okuyan SaaS — tam backend ve prompt engineering | SaaS reading Zendesk, Jira and Freshdesk history, full backend and prompt engineering |
 | **Twiser Engage** | Prompt engineering, PDF ve Excel export hattı | Prompt engineering, and the PDF and Excel export pipeline |
 
