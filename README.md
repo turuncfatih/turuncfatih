@@ -1,11 +1,14 @@
 ### Fatih Turunç
 
-Backend engineer in Antalya. .NET and Node.js on the server — and for the last
-while, multi-agent systems: how to structure an agent team so that **something
-other than the author checks the work.**
+**Backend-first, full-stack in practice.** Antalya, Türkiye.
 
-Most of what I publish is that second part — the architecture, the method, and
-two worked applications of it.
+The depth is on the server — .NET and Node.js, domain-driven design, the parts
+that have to be correct. Day to day I work across the whole thing: the API, the
+Astro site in front of it, the React Native app beside it, and lately the agent
+systems that help build all three.
+
+That last part is most of what I publish — the architecture, the method, and two
+worked applications of it.
 
 <br>
 
@@ -69,11 +72,15 @@ One argument runs through all four:
 
 |  |  |
 |---|---|
-| **Server** | .NET / C# · Node.js · TypeScript |
+| **Backend** — where the depth is | .NET / C# · Node.js · TypeScript · domain-driven design · microservices |
 | **Data** | MSSQL · MongoDB · Elasticsearch · Redis |
-| **Platform** | Azure · AWS · Cloudflare · Docker |
-| **Practice** | Domain-driven design · microservices · CI/CD · testing |
-| **Also** | Astro sites with a heavy SEO/GEO focus, React Native apps |
+| **Web** | Astro · React · TypeScript — static sites built around SEO and GEO |
+| **Mobile** | React Native CLI — iOS and Android |
+| **Platform** | Azure · AWS · Cloudflare · Docker · CI/CD |
+| **AI systems** | Multi-agent orchestration · agent team design · verification and cost control |
+
+The middle three rows are why "backend developer" stopped being an accurate
+label. The first row is still where I would want to be judged.
 
 <br>
 
@@ -87,4 +94,4 @@ takip edebileceği şekilde yazıldı.
 
 <br>
 
-<sub>Antalya, Türkiye · <a href="https://www.linkedin.com/in/fatih-turunc">LinkedIn</a></sub>
+<sub><a href="https://www.linkedin.com/in/fatih-turunc">LinkedIn</a></sub>
