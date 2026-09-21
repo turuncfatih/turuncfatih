@@ -6,7 +6,7 @@ OUT="$(dirname "$0")/logos"
 mkdir -p "$OUT"
 for spec in \
   dotnetcore/dotnetcore-original nodejs/nodejs-original typescript/typescript-original \
-  react/react-original microsoftsqlserver/microsoftsqlserver-plain \
+  react/react-original expo/expo-original microsoftsqlserver/microsoftsqlserver-plain \
   postgresql/postgresql-original mongodb/mongodb-original firebase/firebase-plain \
   supabase/supabase-original redis/redis-original elasticsearch/elasticsearch-original \
   azure/azure-original amazonwebservices/amazonwebservices-plain-wordmark \

@@ -19,7 +19,11 @@ import xml.dom.minidom
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LOGOS = ROOT / "tools" / "logos"
 
-# (row label, [(logo file stem, chip label or None for a wordmark logo)])
+# (row label, [(logo stem, chip label or None for a wordmark, ["tint"])])
+#
+# "tint" is for single-colour marks whose SVG carries no fill of its own — they
+# default to black and vanish on the dark theme, so the root fill is set to the
+# theme's foreground instead.
 ROWS = [
     ("Backend", [
         ("dotnetcore-original", ".NET"),
@@ -28,6 +32,7 @@ ROWS = [
     ]),
     ("Mobile", [
         ("react-original", "React Native"),
+        ("expo-original", "Expo", "tint"),
     ]),
     ("Data", [
         ("microsoftsqlserver-plain", "SQL Server"),
@@ -59,17 +64,25 @@ THEMES = {
 _cache: dict[str, tuple[str, float]] = {}
 
 
-def logo(stem: str) -> tuple[str, float]:
+def logo(stem: str, tint: str | None = None) -> tuple[str, float]:
     """Base64 of the SVG, and its width/height aspect ratio."""
-    if stem not in _cache:
+    key = f"{stem}|{tint or ''}"
+    if key not in _cache:
         raw = (LOGOS / f"{stem}.svg").read_text()
+
         box = re.search(r'viewBox="([-\d.\s]+)"', raw)
         aspect = 1.0
         if box:
             parts = [float(v) for v in box.group(1).split()]
             aspect = parts[2] / parts[3]
-        _cache[stem] = (base64.b64encode(raw.encode()).decode(), aspect)
-    return _cache[stem]
+
+        # fill is inherited, so setting it on the root recolours every path that
+        # does not declare one of its own.
+        if tint:
+            raw = raw.replace("<svg ", f'<svg fill="{tint}" ', 1)
+
+        _cache[key] = (base64.b64encode(raw.encode()).decode(), aspect)
+    return _cache[key]
 
 
 def chip_width(aspect: float, label: str | None) -> float:
@@ -97,8 +110,10 @@ def build(theme: dict[str, str]) -> str:
             f'font-weight="600" fill="{theme["label"]}">{name}</text>')
 
         x = CHIPS_X
-        for stem, label in items:
-            b64, aspect = logo(stem)
+        for item in items:
+            stem, label = item[0], item[1]
+            tint = theme["text"] if len(item) > 2 and item[2] == "tint" else None
+            b64, aspect = logo(stem, tint)
             logo_w = LOGO_H * aspect
             width = chip_width(aspect, label)
 
@@ -128,7 +143,7 @@ def main() -> int:
         print(f"{path.name}  {path.stat().st_size // 1024} KB")
 
     for name, items in ROWS:
-        end = CHIPS_X + sum(chip_width(logo(s)[1], l) + GAP for s, l in items)
+        end = CHIPS_X + sum(chip_width(logo(i[0])[1], i[1]) + GAP for i in items)
         flag = "ok" if end < WIDTH - 20 else "OVERFLOW"
         print(f"  {name:9} {end:5.0f}px / {WIDTH}  {flag}")
     return 0
