@@ -22,7 +22,7 @@ architecture underneath. The mobile and front-end work belonged to other teams.
 | **Poddy** | Podcast platform — the microservices serving its mobile client |
 | **Holopack** | The services behind a mobile app and its dashboard |
 | **Alterna** | 3D model workflow platform — the server side |
-| **TÜSKA** | Accreditation application system for Türkiye's health quality and accreditation institute — microservices |
+| **TUSKANET v3.0** | Accreditation platform for TÜSKA, Türkiye's health quality and accreditation institute — microservices |
 | **WristIQ** | Wristband and QR payments — the transaction and payment side |
 | **SupportSignal** | SaaS that reads Zendesk, Jira and Freshdesk history — full backend and prompt engineering |
 | **Twiser Engage** | Prompt engineering, and the PDF and Excel export pipeline |
