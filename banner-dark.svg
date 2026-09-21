@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-label="Fatih Turunc - backend-first, full-stack in practice">
+  <rect x="0.5" y="0.5" width="1199" height="259" rx="12" fill="#0d1117" stroke="#30363d"/>
+
+  <!-- accent rule: turunc = bitter orange -->
+  <rect x="64" y="66" width="44" height="3" rx="1.5" fill="#ff8c42"/>
+
+  <text x="64" y="118" font-family="ui-sans-serif,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="38" font-weight="700" fill="#e6edf3">Fatih Turunç</text>
+  <text x="64" y="152" font-family="ui-sans-serif,-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="17" fill="#9198a1">Backend-first, full-stack in practice · Antalya, Türkiye</text>
+  <text x="64" y="192" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13.5" fill="#6e7681">.NET · Node.js · TypeScript · React Native · Azure · AWS</text>
+
+  <!-- the pipeline this profile is about -->
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12">
+
+    <!-- connectors -->
+    <g stroke="#30363d" stroke-width="1.5" fill="none">
+      <path d="M776 130 H800 V98 H824"/>
+      <path d="M776 130 H800 V162 H824"/>
+      <path d="M912 98  H936 V130"/>
+      <path d="M912 162 H936 V130"/>
+      <path d="M936 130 H960"/>
+      <path d="M1048 130 H1076"/>
+    </g>
+
+    <rect x="700" y="114" width="76" height="32" rx="6" fill="#151b23" stroke="#30363d"/>
+    <text x="738" y="134" text-anchor="middle" fill="#9198a1">plan</text>
+
+    <rect x="824" y="82"  width="88" height="32" rx="6" fill="#151b23" stroke="#30363d"/>
+    <text x="868" y="102" text-anchor="middle" fill="#9198a1">build</text>
+
+    <rect x="824" y="146" width="88" height="32" rx="6" fill="#151b23" stroke="#30363d"/>
+    <text x="868" y="166" text-anchor="middle" fill="#9198a1">test</text>
+
+    <rect x="960" y="114" width="88" height="32" rx="6" fill="#151b23" stroke="#ff8c42" stroke-width="1.75"/>
+    <text x="1004" y="134" text-anchor="middle" fill="#ff8c42" font-weight="600">verify</text>
+    <text x="1004" y="168" text-anchor="middle" fill="#ff8c42" font-size="10.5" opacity="0.85">can say no</text>
+
+    <rect x="1076" y="114" width="60" height="32" rx="6" fill="#151b23" stroke="#30363d"/>
+    <text x="1106" y="134" text-anchor="middle" fill="#9198a1">ship</text>
+  </g>
+</svg>
