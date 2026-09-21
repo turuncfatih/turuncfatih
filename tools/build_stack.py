@@ -12,6 +12,7 @@ Logos come from devicon (MIT). Re-download them with tools/fetch_logos.sh.
 from __future__ import annotations
 
 import base64
+import hashlib
 import pathlib
 import re
 import xml.dom.minidom
@@ -135,12 +136,36 @@ def build(theme: dict[str, str]) -> str:
     return "\n".join(out + ["</g>", "</svg>", ""])
 
 
+def stamp_readme() -> None:
+    """Append a content hash to every local SVG the README references.
+
+    GitHub and the browser both cache these by URL, so regenerating an image
+    without changing its URL leaves visitors looking at the old one. The hash
+    changes only when the file does.
+    """
+    readme = ROOT / "README.md"
+    text = readme.read_text()
+
+    for svg in sorted(ROOT.glob("*.svg")):
+        digest = hashlib.md5(svg.read_bytes()).hexdigest()[:8]
+        text = re.sub(
+            rf'{re.escape(svg.name)}(\?v=[0-9a-f]+)?',
+            f"{svg.name}?v={digest}",
+            text,
+        )
+
+    readme.write_text(text)
+    print("README.md stamped")
+
+
 def main() -> int:
     for name, theme in THEMES.items():
         path = ROOT / f"stack-{name}.svg"
         path.write_text(build(theme))
         xml.dom.minidom.parse(str(path))
         print(f"{path.name}  {path.stat().st_size // 1024} KB")
+
+    stamp_readme()
 
     for name, items in ROWS:
         end = CHIPS_X + sum(chip_width(logo(i[0])[1], i[1]) + GAP for i in items)
